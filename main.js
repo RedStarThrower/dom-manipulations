@@ -107,8 +107,8 @@ document.querySelector("#cycle-image button").addEventListener('click',function(
   var url = cityImgEl.src 
   var urlParts = url.split("/")
   var photoId = urlParts.pop()
-  var newId = parseInt(photoId) + 1
-  newId = ((newId - 1) % 10) + 1 // <= cycle up to 10, reset to 1
+  var currentId = parseInt(photoId)
+  var newId = (currentId % 10) + 1 // <= cycle up to 10, reset to 1
   urlParts.push(newId)
   cityImgEl.src = urlParts.join("/")
 })
